@@ -4,7 +4,7 @@ class JailsController < ApplicationController
 	def main
 		url = "https://news.washeriff.net/wp-content/reports/booking/mainbook.html"
 		doc = Nokogiri::HTML(open(url))
-		@body = doc.css('p')
+		@body = doc.css('table')
 
 	end
 
