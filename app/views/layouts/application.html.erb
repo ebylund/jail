@@ -5,20 +5,40 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
+<div class="navbar navbar-fixed-top" role="navigation">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a class="brand" href="#">Some Store</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li>my link</li>
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
-<div class="container">
-	<div class="row">
-		<div class="span3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eros neque, rutrum a adipiscing vitae, congue eu augue. Integer eu urna dapibus ligula hendrerit egestas. Mauris congue, elit eget euismod sodales, metus turpis viverra massa, sit amet pretium lorem tortor vel elit. Donec sit amet semper magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec auctor, arcu sit amet sodales elementum, justo mauris gravida arcu, et condimentum dui orci vitae diam. Duis posuere ante justo, a porttitor diam ultricies eu. Pellentesque vel justo quis dolor accumsan dignissim. In congue lectus nec nunc feugiat bibendum. Vivamus ipsum dolor, hendrerit id justo eu, ullamcorper convallis purus. Praesent venenatis facilisis quam, vel egestas lorem posuere in. Curabitur adipiscing purus mauris, ac aliquet nibh hendrerit tempus. Suspendisse consequat augue sodales erat tristique, vitae mollis ligula auctor. Curabitur congue viverra fermentum.
+		
+	  <div class="container">
+    <div class="row">
+      <div class="span12"><%= yield %></div>
 
-		</div>
-		<div class="span9"><%= yield %></div>
+    </div>
+  </div>
 
-	</div>
-</div>
+
 
 
 </body>
