@@ -1,2 +1,7 @@
 
-<%=raw @body%>
+<% @body.each do |name| %> 
+
+	<div><%= raw name %></div>
+
+<% end %>
+

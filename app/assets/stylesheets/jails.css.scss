@@ -6,3 +6,21 @@
 	background-image:none;
 	background-color:rgba(234,234,234,1);
 }
+
+table {
+	width:450px;
+	border:solid 1px #000;
+	margin:auto;
+}
+
+.name {
+	width:200px;
+}
+
+/*table tr:first-child {
+	width: 160px;
+}*/
+
+.picture{
+	width:160px;
+}
