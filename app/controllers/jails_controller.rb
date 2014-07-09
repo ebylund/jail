@@ -11,7 +11,8 @@ class JailsController < ApplicationController
 
 		doc.css("table").each do |table|
 			h = {}
-			h[:charge] = table.at_css('.charge').text
+			h[:charge] = table.at_css('.charge')
+			
 			@table << h
 
 			# @body << table.at_css('.name p').text[/([A-Z]*)/]	
