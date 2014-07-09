@@ -9,10 +9,12 @@ class JailsController < ApplicationController
 		@charge = []
 		@picture = []
 
-		doc.css("table").each do |table|
+		doc.css("table").each do |bookee|
 			h = {}
-			h[:charge] = table.at_css('.charge')
-			
+			h[:charge] = bookee.at_css('.charge')
+			separate = bookee.at_css('.name p')
+			h[:address] = separate.to_s.split('<br>')
+
 			@table << h
 
 			# @body << table.at_css('.name p').text[/([A-Z]*)/]	
