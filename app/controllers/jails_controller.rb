@@ -7,12 +7,13 @@ class JailsController < ApplicationController
 		@body = [] #doc.css('.name p').text[/([A-Z]*)/]
 		@table = []
 		@charge = []
+		@picture = []
 
 		doc.css("table").each do |table|
-			@body << table
+			@table << table
 
 			# @body << table.at_css('.name p').text[/([A-Z]*)/]	
-			# @table << table.at_css('.picture img')
+			@picture << table.at_css('.picture img')[//]
 			@charge << table.at_css('.charge')
 		end
 	end
