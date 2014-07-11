@@ -5,6 +5,14 @@
 .navbar-inner{
 	background-image:none;
 	background-color:rgba(234,234,234,1);
+	line-height:68px;
+}
+
+
+ul.nav li a {
+	margin: 0;
+	padding: 0;
+	line-height:48px;
 }
 
 table {
@@ -29,7 +37,7 @@ body {
 	background-image:
     	linear-gradient(
      	to top, 
-    	#CDCFCC, white
+    	#B2B2B2, white
     );
 }
 
@@ -46,7 +54,15 @@ body {
 		background-image:
     	linear-gradient(
      	to top, 
-    	#CDCFCC, white
+    	#B2B2B2, white
     );
 
+}
+
+#brand {
+	font-size: 30px;
+	margin-left: 22px;
+	font-weight: bold;
+	color: #4C4C4C;
+	font-family: impact;
 }
