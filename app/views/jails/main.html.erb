@@ -1,8 +1,17 @@
+<!-- <%=@paraElement%> -->
 
-<% @table.each do |h| %> 
-	
-	<div><%=  raw h[:charge] %></div>
+<% @personTable.each do |h| %> 
+
+	<div><%=  h[:name] %></div>
 	<div><%=  h[:address] %></div>
+	<div><%=  h[:city] %></div>
+	<div><%=  h[:number] %></div>
+	<div><%=  h[:date] %></div>
+	<div><%=  h[:officer] %></div>
+	<div><%=  h[:agency] %></div>
+	<div><%=  raw h[:charge] %></div>
+	<div><%=  raw h[:status] %></div>
+	
 	
 <% end %>
 
