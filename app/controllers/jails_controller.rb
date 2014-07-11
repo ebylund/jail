@@ -1,16 +1,29 @@
 class JailsController < ApplicationController
 	require 'open-uri'
 	require 'nokogiri'
+
+
+
+		
+  		
+	
+
 	def main
 		url = "https://news.washeriff.net/inmate-information/bookings/"
 		doc = Nokogiri::HTML(open(url))
 		@body = [] #doc.css('.name p').text[/([A-Z]*)/]
 		@personTable = []
 		@charge = []
+		@file = []
 
 
 		doc.css("table").each do |bookee|
 			h = {}
+
+			# File.open('pie.png', 'wb') do |fo|
+			#   fo.write open("https://www.google.com/images/srpr/logo11w.png").read 
+			# end
+
 			h[:charge] = bookee.at_css('.charge')
 			h[:name] = bookee.at_css('.name p b').text
 			separate = bookee.at_css('.name p')
@@ -34,6 +47,9 @@ class JailsController < ApplicationController
 			# @paraElement = paraElement.each { |x| puts x }
 			# h[:info] = paraElement
 			h[:picture] = bookee.at_css('.picture img[src]').to_s.strip.gsub(/%20/,"")
+
+			string = "https://news.washeriff.net/images/87/493187/14071114502200.JPG"
+			Bookee.attachment.upload = File.open(string)
 			# @picture = bookee.at_css('.picture img[src]')
 
 			@personTable << h
