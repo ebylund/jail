@@ -1,7 +1,19 @@
-
-<% @table.each do |h| %> 
-
-	<div><%= h[:charge] %></div>
-	<!-- <%= raw @charge%> -->
+<!-- <%=@paraElement%> -->
+<!-- <%=@picture%> -->
+<% @personTable.each do |h| %>
+	<%= image_tag bookee.attachment_url %>
+	<div><%=  h[:picture] %></div>
+	<div><%=  h[:name] %></div>
+	<div><%=  h[:address] %></div>
+	<div><%=  h[:city] %></div>
+	<div><%=  h[:number] %></div>
+	<div><%=  h[:date] %></div>
+	<div><%=  h[:time] %></div>
+	<div><%=  h[:officer] %></div>
+	<div><%=  h[:agency] %></div>
+	<div><%=  raw h[:charge] %></div>
+	<div><%=  raw h[:status] %></div>
+	
+	
 <% end %>
 
