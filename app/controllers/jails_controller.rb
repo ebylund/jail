@@ -48,8 +48,8 @@ class JailsController < ApplicationController
 			# h[:info] = paraElement
 			h[:picture] = bookee.at_css('.picture img[src]').to_s.strip.gsub(/%20/,"")
 
-			string = "https://news.washeriff.net/images/87/493187/14071114502200.JPG"
-			Bookee.attachment.upload = File.open(string)
+			# string = "https://news.washeriff.net/images/87/493187/14071114502200.JPG"
+			# Bookee.attachment.upload = File.open(string)
 			# @picture = bookee.at_css('.picture img[src]')
 
 			@personTable << h
