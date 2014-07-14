@@ -1,8 +1,5 @@
-<!-- <%=@paraElement%> -->
-<!-- <%=@picture%> -->
 <% @personTable.each do |h| %>
-	<%= image_tag bookee.attachment_url %>
-	<div><%=  h[:picture] %></div>
+	<div><%=  h[:lastName] %></div>
 	<div><%=  h[:name] %></div>
 	<div><%=  h[:address] %></div>
 	<div><%=  h[:city] %></div>
@@ -12,6 +9,7 @@
 	<div><%=  h[:officer] %></div>
 	<div><%=  h[:agency] %></div>
 	<div><%=  raw h[:charge] %></div>
+	<div><%=  raw h[:charge_details]%></div>
 	<div><%=  raw h[:status] %></div>
 	
 	
