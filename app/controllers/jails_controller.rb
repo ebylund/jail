@@ -2,35 +2,58 @@ class JailsController < ApplicationController
 	require 'open-uri'
 	require 'nokogiri'
 
-
-
-		
-  		
-	
-
 	def main
 		url = "https://news.washeriff.net/inmate-information/bookings/"
 		doc = Nokogiri::HTML(open(url))
 		@body = [] #doc.css('.name p').text[/([A-Z]*)/]
 		@personTable = []
-		@charge = []
-		@file = []
+		
 
+
+		#loops through each table to parse out the information for each bookee
 
 		doc.css("table").each do |bookee|
 			h = {}
+			#string of last name for each bookee
+			@lastName = bookee.at_css('.name p b').to_s.gsub(/<\/?b\/?>/, "").split(",")[0]
 
-			# File.open('pie.png', 'wb') do |fo|
-			#   fo.write open("https://www.google.com/images/srpr/logo11w.png").read 
-			# end
+			#selects each image tag and removes all white space on the end of the link
+			picture = bookee.at_css('.picture img[src]').to_s.strip.gsub(/%20/,"")
 
-			h[:charge] = bookee.at_css('.charge')
+			# the image url to download the image
+			image_location = picture[/https:\/\/([^\"]+)/]
+
+			# the string of digits in the image url reformatted as a unique file identifier
+			pic_str = image_location[/\/[\d]+\/[\d]+\/[\d]+/].gsub(/\//,"").to_s
+
+			#downloads and saves images from image_location to the images file in the rails app
+
+			# open(image_location) {|f|
+			#    File.open( "app/assets/images/" + pic_str + ".jpg","wb") do |file|
+			#      file.puts f.read
+			#    end
+			# }
+
+			h[:charge] = bookee.css('.charge')
+			h[:charge_details] = bookee.css('.chargedetails p')
 			h[:name] = bookee.at_css('.name p b').text
 			separate = bookee.at_css('.name p')
 			paraElement = separate.to_s.gsub(/<\/?br\/?>/, "").split("\n")
+			address = paraElement[1].strip.gsub("Address: ", "")
 
-			h[:address] = paraElement[1].strip.gsub("Address: ", "")
-			h[:city] = paraElement[2].strip.gsub("City/State: ", "")
+			if address == '/'
+				h[:address] = "No Address"
+			else
+				h[:address] = address
+			end
+
+			city = paraElement[2].strip.gsub("City/State: ", "").strip
+
+			if city == "/"
+				h[:city] = "No City"
+			else
+				h[:city] = city
+			end
 			h[:number] = paraElement[3].strip.gsub("PCF Number: ", "")
 
 			date_time = paraElement[4].strip.gsub("Arrest Date: ", "")

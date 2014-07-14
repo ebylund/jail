@@ -1,5 +1,3 @@
-<!-- <%=@paraElement%> -->
-<!-- <%=@picture%> -->
 <% @personTable.each do |h| %>
 	
 	<div id="picture"><%=  h[:picture] %></div>
@@ -12,8 +10,7 @@
 	<div id="officer"><span>Officer: </span><%=  h[:officer] %></div>
 	<div id="agency"><span>Agency: </span><%=  h[:agency] %></div>
 	<div id="charge"><span>Charges: </span><%=  raw h[:charge] %></div>
+	<div id="charge_details"><span>Charge Details: </span><%=  raw h[:charge_details]%></div>
 	<div id="status"><span>Status: </span><%=  raw h[:status] %></div>
-	
-	
 <% end %>
 
