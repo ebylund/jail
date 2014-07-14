@@ -1,18 +1,18 @@
 <!-- <%=@paraElement%> -->
 <!-- <%=@picture%> -->
 <% @personTable.each do |h| %>
-	<%= image_tag bookee.attachment_url %>
-	<div><%=  h[:picture] %></div>
-	<div><%=  h[:name] %></div>
-	<div><%=  h[:address] %></div>
-	<div><%=  h[:city] %></div>
-	<div><%=  h[:number] %></div>
-	<div><%=  h[:date] %></div>
-	<div><%=  h[:time] %></div>
-	<div><%=  h[:officer] %></div>
-	<div><%=  h[:agency] %></div>
-	<div><%=  raw h[:charge] %></div>
-	<div><%=  raw h[:status] %></div>
+	
+	<div id="picture"><%=  h[:picture] %></div>
+	<div id="name"><%=  h[:name] %></div>
+	<div id="address"><span>Address: </span><%=  h[:address] %></div>
+	<div id="city"><span>City / State: </span><%=  h[:city] %></div>
+	<div id="number"><span>PCF Number: </span><%=  h[:number] %></div>
+	<div id="date"><span>Date Arrested: </span><%=  h[:date] %></div>
+	<div id="time"><span>Time Arrested: </span><%=  h[:time] %></div>
+	<div id="officer"><span>Officer: </span><%=  h[:officer] %></div>
+	<div id="agency"><span>Agency: </span><%=  h[:agency] %></div>
+	<div id="charge"><span>Charges: </span><%=  raw h[:charge] %></div>
+	<div id="status"><span>Status: </span><%=  raw h[:status] %></div>
 	
 	
 <% end %>
