@@ -1,54 +1,3 @@
-<!--<!DOCTYPE html>
-<html>
-<head>
-  <title>Utah Jailbirds</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= favicon_link_tag 'favicon.ico' %>
-</head>
-<body ng-app="jailBirds">
-<div class="navbar navbar-fixed-top" role="navigation">
-    <div class="navbar-inner">
-      <div class="container"style='height:75px;'>
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <div style='float:left;margin:0 0 0 25px;padding:0;height:68px;'>
-          <%= image_tag 'Jailbird.png', width:"90", height:"68" %>
-        </div>
-        <a id="brand" href="#" style='line-height:75px;' class="">Utah Jailbirds</a>
-        <div class="nav-collapse pull-right">
-          <ul class="nav">
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-       
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-<div id="backgroundFixed"></div>
-<div class="container">
-    <div class="row">
-      <div class="span12"><%= yield %></div>
-
-    </div>
-</div>
-
-
-
-</body>
-</html>
-
--->
 
 <!DOCTYPE html>
 <html>
@@ -105,22 +54,12 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">Name</h4>
+        <h4 class="modal-title" id="myModalLabel"><div> ng-repeat = 'bookee in Bookee.all()</div></h4>
       </div>
       <div class="modal-body">
-        Picture <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        Address <br>
-        City <br>
-        Date-Time Arrested <br>
-        Officer <br>
-        Offenses <br>
-        Offenses <br>
-        Offenses <br>
-        statues <br>
+  
+
+
 
       </div>
       <div class="modal-footer">
@@ -130,10 +69,7 @@
   </div>
 </div>
 
-  </head>
-  
 
-  <body>
     <div id="map-canvas"/>
 
 <div id="backgroundFixed"></div>
