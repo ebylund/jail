@@ -5,8 +5,11 @@
 			$scope.Bookee = Bookee;
 			$scope.Crime = Crime;
 			$scope.ConvictOffense = ConvictOffense;
-
+			$scope.bookee_details = function(bookee){
+				$scope.bookee_info = bookee;
+			}
 	}]);
+
 })();
 
 // ng-repeat = 'bookee in Bookee.all()'

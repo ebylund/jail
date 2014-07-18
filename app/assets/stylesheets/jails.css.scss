@@ -60,6 +60,7 @@ body {
 	font-size: 14.5px;
 	text-align: center;
 	padding-bottom: 5px;
+
 }
 
 .span12 {
@@ -78,6 +79,7 @@ body {
 
 #status {
 	margin-bottom: 15px;
+	text-align: center;
 }
 
 #header {
@@ -98,6 +100,7 @@ body {
 
 #address {
 	margin-top: 4px;
+	text-align: center;
 }
 
 #line2 {
@@ -121,6 +124,7 @@ body {
 	-moz-box-shadow:    9px 9px 13px 0px rgba(50, 50, 50, 1);
 	box-shadow:         3px 3px 23px 0px rgba(50, 50, 50, 1);
 	width: 260px;
+	
 }
 
 #location_image {
@@ -149,4 +153,28 @@ left: -40px;
 
 .navbar-form{
 	float: right;
+}
+#status_color {
+	color: #ED6B20;
+	text-align: center;
+}
+#table{
+
+}
+#offense{
+	text-align: center;
+	color: #ED6B20;
+}
+
+#modal-picture {
+	width: 70%;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	margin-top: -15px;
+}
+
+#status-marginbottom {
+	margin-bottom: 25px;
+	text-align: center;
 }
