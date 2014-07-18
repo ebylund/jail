@@ -48,15 +48,11 @@
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<div class="modal-header">
-						<h4 class="modal-title" id="myModalLabel">
-							<div id="name">{{bookee_info.name}}</div>
-						</h4>
-					</div>
+	
 					<img id="picture" ng-src="/assets/{{bookee.picture}}">
 					<div class="modal-body">
 						<img id="modal-picture" ng-src="/assets/{{bookee_info.picture}}">
-
+						<div id="name">{{bookee_info.name}}</div>
 						<hr id="line1">
 						<div id="address">Address: {{bookee_info.address}}, {{bookee_info.city_state}}</div>
 
