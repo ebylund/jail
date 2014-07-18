@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
+  
 
-  get "/" => "jails#main"
+  root "static#index"
+  get "/bookings" => "jails#main"
+
+
+  namespace :api do
+    resources :bookees, except: [:new, :edit]
+    resources :crimes, except: [:new, :edit]
+    resources :convict_offenses , except: [:new, :edit]
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

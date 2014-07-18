@@ -11,15 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709202116) do
+ActiveRecord::Schema.define(version: 20140718004828) do
 
   create_table "bookees", force: true do |t|
     t.string   "name"
     t.string   "address"
     t.string   "picture"
-    t.integer  "arrest_date"
-    t.integer  "arrest_time"
+    t.datetime "arrest_datetime"
     t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "pcf_number"
+    t.string   "city_state"
+    t.string   "officer"
+    t.string   "agency"
+    t.float    "address_lat"
+    t.float    "address_lon"
+  end
+
+  create_table "convict_offenses", force: true do |t|
+    t.integer  "bookee_id"
+    t.integer  "crime_id"
+    t.string   "court"
+    t.string   "required_bond"
+    t.string   "paid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "convict_offenses", ["bookee_id"], name: "index_convict_offenses_on_bookee_id"
+  add_index "convict_offenses", ["crime_id"], name: "index_convict_offenses_on_crime_id"
+
+  create_table "crimes", force: true do |t|
+    t.string   "name"
+    t.string   "classification"
+    t.string   "statute"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

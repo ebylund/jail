@@ -1,16 +1,26 @@
-<% @personTable.each do |h| %>
+
+
+
+	<% @details.each do |h| %>
+		<%=h[:charge]%>
+		<%=h[:classification]%>
+		<%=h[:statute]%>
+		<%=h[:court]%>
+		<%=h[:bond]%>
+		<%=h[:paid]%>
+	<% end %>
+
+
+
+
+	<!-- 
+	<div><%= @paraElement %></div>
+	<div><%= @classification %></div>
+	<div><%= @statute %></div>
+	<div><%= @court%></div>
+	<div><%= @bond%></div>
+	<div><%= @paid%></div>
+ -->
 	
-	<div id="picture"><%=  h[:picture] %></div>
-	<div id="name"><%=  h[:name] %></div>
-	<div id="address"><span>Address: </span><%=  h[:address] %></div>
-	<div id="city"><span>City / State: </span><%=  h[:city] %></div>
-	<div id="number"><span>PCF Number: </span><%=  h[:number] %></div>
-	<div id="date"><span>Date Arrested: </span><%=  h[:date] %></div>
-	<div id="time"><span>Time Arrested: </span><%=  h[:time] %></div>
-	<div id="officer"><span>Officer: </span><%=  h[:officer] %></div>
-	<div id="agency"><span>Agency: </span><%=  h[:agency] %></div>
-	<div id="charge"><span>Charges: </span><%=  raw h[:charge] %></div>
-	<div id="charge_details"><span>Charge Details: </span><%=  raw h[:charge_details]%></div>
-	<div id="status"><span>Status: </span><%=  raw h[:status] %></div>
-<% end %>
+
 
