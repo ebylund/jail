@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <head>
   <title>Utah Jailbirds</title>
@@ -47,3 +47,105 @@
 
 </body>
 </html>
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Utah Jailbirds</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-fixed-top" role="navigation">
+  <div class="navbar-inner">
+    <div class="container-fluid" style='height:75px;'>
+    
+      <div style='float:left;margin:0 0 0 25px;padding:0;height:68px;'>
+        <%= image_tag 'Jailbird.png', width:"90", height:"68" %>
+      </div>
+      <a id="brand" href="#" style='line-height:75px;' class="">Utah Jailbirds</a>
+
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+            <div class="nav-collapse pull-right">
+              <ul class="nav">
+                <li id="collapsed-search">
+                  <form class="navbar-form navbar-right" role="search">
+                  <div class="form-group"> 
+                  <input type="text" class="form-control" placeholder="Search">
+                   <button type="submit" class="btn btn-default">Submit</button>
+                  </div>
+                    </form>
+                </li>
+           
+              </ul>
+            </div>
+
+    </div>
+  </div>
+</nav> 
+
+<!-- Twitter Link -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Name</h4>
+      </div>
+      <div class="modal-body">
+        Picture <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        Address <br>
+        City <br>
+        Date-Time Arrested <br>
+        Officer <br>
+        Offenses <br>
+        Offenses <br>
+        Offenses <br>
+        statues <br>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </head>
+  
+
+  <body>
+    <div id="map-canvas"/>
+
+<div id="backgroundFixed"></div>
+<div class="container">
+
+    <div class="row">
+      <div class="span12"><%= yield %></div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
+

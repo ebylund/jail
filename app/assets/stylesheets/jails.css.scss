@@ -1,4 +1,4 @@
-// Place all the styles related to the jails controller here.
+/*// Place all the styles related to the jails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -29,7 +29,7 @@ table {
 	width: 160px;
 }*/
 
-.picture{
+/*.picture{
 	width:160px;
 }
 
@@ -75,4 +75,159 @@ body {
 .span12 {
 	width: 100%;
 	margin: 0 auto;
+}*/
+
+// Place all the styles related to the jails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar-inner{
+	background-image:none;
+	background-color:rgba(234,234,234,1);
+	line-height:68px;
+
+}
+
+
+
+
+table {
+	width:450px;
+	border:solid 1px #000;
+	margin:auto;
+}
+
+.name {
+	width:200px;
+}
+
+
+body {
+	background-image:
+    	linear-gradient(
+     	to top, 
+    	#B2B2B2, white
+    );
+}
+
+#backgroundFixed {
+	position: fixed;
+	z-index: -1;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	background-repeat: none;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+		background-image:
+    	linear-gradient(
+     	to top, 
+    	#B2B2B2, white
+    );
+
+}
+
+#brand {
+	font-size: 30px;
+	margin-left: 22px;
+	font-weight: bold;
+	color: #4C4C4C;
+	font-family: impact;
+}
+
+#name {
+	font-weight: bold;
+	font-size: 14.5px;
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+.span12 {
+	width: 260px;
+	margin: 0 auto;
+}
+
+#picture {
+	width: 260px;
+
+}
+#charge {
+	display: inline-block;
+	font-color: #ED6B20 !important;
+}
+
+#status {
+	margin-bottom: 15px;
+}
+
+#header {
+	font-size: 21px;
+	color: #4C4C4C;
+	font-family: impact;
+	width: 280px;
+	margin: auto;
+	color: #ED6B20;
+	margin-bottom: 18px;
+}
+
+#line1 {
+	padding: 0;
+	margin: 0;
+	border-color: #4C4C4C;
+}
+
+#address {
+	margin-top: 4px;
+}
+
+#line2 {
+	margin-top: 4px;
+	margin-bottom: 4px;
+	border-color: #4C4C4C;
+}
+
+#picture-nav {
+	width: 260px;
+	text-align: right;
+	margin-bottom: 10px;
+	background-color: #8f8f8f;
+	height: 38px;
+	border-top: 2px solid #b2b2b2;
+
+}
+
+#backgroundfix {
+	-webkit-box-shadow: 9px 9px 13px 0px rgba(50, 50, 50, 1);
+	-moz-box-shadow:    9px 9px 13px 0px rgba(50, 50, 50, 1);
+	box-shadow:         3px 3px 23px 0px rgba(50, 50, 50, 1);
+	width: 260px;
+}
+
+#location_image {
+	position: relative;
+	left: -140px;
+	top: 6px;
+}
+
+
+#personal_image {
+top: 6px;
+position: relative;
+left: -90px;
+}
+
+#twitter_image {
+top: 6px;
+position: relative;
+left: -40px;
+}
+
+#anchors {
+	list-style-type: none;
+	list-style-position: relative;
+}
+
+.navbar-form{
+	float: right;
 }
