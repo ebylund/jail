@@ -18,11 +18,11 @@
 	.factory('Bookee', ['Data', function(Data){
 		return {
 			'all': function(){
-				return Data.data.bookees;
+				return Data.data.bookees || [];
 			},
 			"find": function(id){
 				var _ref = this.all()
-				for(var i = 0; i < _ref.length: ++i){
+				for(var i = 0; i < _ref.length; ++i){
 					var bookee = _ref[i];
 					if(bookee.id == id) return bookee;
 				}
@@ -38,11 +38,11 @@
 
 		return {
 			'all': function(){
-				return Data.data.crimes;
+				return Data.data.crimes || [];
 			},
 			"find": function(id){
 				var _ref = this.all()
-				for(var i = 0; i < _ref.length: ++i){
+				for(var i = 0; i < _ref.length; ++i){
 					var crime = _ref[i];
 					if(crime.id == id) return crime;
 				}
@@ -56,12 +56,12 @@
 	.factory('ConvictOffense', ['Data', function(Data){
 		return {
 			'all': function(){
-				return Data.data.convict_offenses;
+				return Data.data.convict_offenses || [];
 			},
 
 			"find": function(id){
 				var _ref = this.all()
-				for(var i = 0; i < _ref.length: ++i){
+				for(var i = 0; i < _ref.length; ++i){
 					var convict_offense = _ref[i];
 					if(convict_offense.id == id) return convict_offense;
 				}

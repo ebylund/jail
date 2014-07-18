@@ -7,17 +7,32 @@
 </div>
 
 -->
+<div ng-controller="BookeePage">
+	<div id="header">Washington County Bookings</div>
 
-<div id="header">Washington County Bookings</div>
+
+		 <div id="backgroundfix">
+
+		 	<div ng-repeat = 'bookee in Bookee.all()'>
+		 		{{bookee}}
+		 	</div>
+			 	<div id="picture-nav">
+			 		
+				 	<a href="onClick="onClick()""><%= image_tag 'facebook30.png', :id => "location_image"%></a>
+				 	<a href="#"data-toggle="modal" data-target="#myModal"><%= image_tag 'personal19.png', :id => "personal_image"%></a>
+				 	<a href="https://twitter.com/share?text=I can't believe they got booked! check it out at:&url=http://www.utahjailbirds.com" data-lang="en"><%= image_tag 'twitter.png', :id => "twitter_image"%></a>
+			 		
+			 	</div>
+			
+
+			 <div ng-repeat = 'convict_offense_id in bookee.convict_offense_ids' ng-init="convict_offense = ConvictOffense.find(convict_offense_id)">
+
+			 </div>
+			 <div ng-init="crime = Crime.find(convict_offense.crime_id)">
+
+			 </div>
+		 </div>
+</div>
 
 
-	 <div id="backgroundfix">
-	 	<%= image_tag 'style.jpg', :id => 'picture' %>
-	 	<div id="picture-nav">
-	 		
-		 	<a href="onClick="onClick()""><%= image_tag 'facebook30.png', :id => "location_image"%></a>
-		 	<a href="#"data-toggle="modal" data-target="#myModal"><%= image_tag 'personal19.png', :id => "personal_image"%></a>
-		 	<a href="https://twitter.com/share?text=I can't believe they got booked! check it out at:&url=http://www.utahjailbirds.com" data-lang="en"><%= image_tag 'twitter.png', :id => "twitter_image"%></a>
-	 		
-	 	</div>
-	 </div>
+
