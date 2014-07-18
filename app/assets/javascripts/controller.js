@@ -8,12 +8,18 @@
 			$scope.Crime = Crime;
 			$scope.ConvictOffense = ConvictOffense;
 
+
 			$scope.location_bookee = {};
 			$scope.setLocationBookee = function(bookee){
 				$scope.location_bookee = bookee;
 			};
 			$scope.getMapLocation = function(){
 				return $sce.trustAsResourceUrl("https://www.google.com/maps/embed/v1/place?key=AIzaSyAgWjEPdtvd6suUT-KekuL0xzZukTHp2YY&q="+encodeURI($scope.location_bookee.address+",+"+$scope.location_bookee.city_state)+"&zoom=16&maptype=roadmap")
+			};
+
+
+			$scope.bookee_details = function(bookee){
+				$scope.bookee_info = bookee;
 			};
 		}
 	]);

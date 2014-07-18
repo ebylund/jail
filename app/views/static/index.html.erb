@@ -1,58 +1,95 @@
 
 <div ng-controller="BookeePage">
 	<div id="header">Washington County Bookings</div>
+	<div id="table">
+		<div ng-repeat = 'bookee in Bookee.all()'>
+			
+			<div id="backgroundfix">
 
+				<img id="picture" ng-src="/assets/{{bookee.picture}}">
 
-		 <div id="backgroundfix">
+				<div id="picture-nav">
 
-		 	<div ng-repeat = 'bookee in Bookee.all()'>
+					<a href="#" data-toggle="modal" data-target="#locationModal" ng-click="setLocationBookee(bookee)"><%= image_tag 'facebook30.png', :id => "location_image"%></a>
+					<a ng-click="bookee_details(bookee)" href="#"data-toggle="modal" data-target="#myModal"><%= image_tag 'personal19.png', :id => "personal_image"%></a>
+					<a ng-href="https://twitter.com/share?text=I+can't+believe+they+got+booked!+check+it+out+at:&url=http://www.utahjailbirds.com" data-lang="en"><%= image_tag 'twitter.png', :id => "twitter_image"%></a>
 
+				</div>
+			</div>
+			<div id="name" >{{bookee.name}}</div>
+			<hr id="line1">
+			<div id="address">Address: {{bookee.address}}</div>
+			<div id="address">City/State:{{bookee.city_state}}</div>
 
+			<hr id="line2">
+			<div ng-repeat = 'convict_offense_id in bookee.convict_offense_ids' ng-init="convict_offense = ConvictOffense.find(convict_offense_id)">
 
-		 		<img id="picture" ng-src="/assets/{{bookee.picture}}">
-
-		 		<div id="picture-nav">
-				 	<a href="#" data-toggle="modal" data-target="#locationModal" ng-click="setLocationBookee(bookee)"><%= image_tag 'facebook30.png', :id => "location_image"%></a>
-				 	<a href="#" data-toggle="modal" data-target="#myModal"><%= image_tag 'personal19.png', :id => "personal_image"%></a>
-				 	<a href="https://twitter.com/share?text=I can't believe they got booked! check it out at:&url=http://www.utahjailbirds.com" data-lang="en"><%= image_tag 'twitter.png', :id => "twitter_image"%></a>
-
-			 	</div>
-			 	<div id="name" >{{bookee.name}}</div>
-			 	<hr id="line1">
-			 	<div id="address">Address: {{bookee.address}}</div>
-			 	<div id="address">City/State: {{bookee.city_state}}</div>
-			 	<hr id="line2">
-			 	<div id="address">STATUS: <span id="status_color">{{bookee.status}}</span></div>
-
+				<div ng-init="crime = Crime.find(convict_offense.crime_id)">
+					<div id="offense">{{crime.name}}</div>
+				</div>
 			</div>
 
-			 <div ng-repeat = 'convict_offense_id in bookee.convict_offense_ids' ng-init="convict_offense = ConvictOffense.find(convict_offense_id)">
+			<div id="status-marginbottom">STATUS: <span id="status_color"><b>{{bookee.status}}</b></span></div>
 
-			 </div>
-			 <div ng-init="crime = Crime.find(convict_offense.crime_id)">
+		</div>
+	</div>
 
-			 </div>
-		 </div>
-
-		<div class="modal fade" id="locationModal" tabindex="-1" role="dialog" aria-labelledby="locationModalTitle" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">
-							<span aria-hidden="true">&times;</span>
-							<span class="sr-only">Close</span>
-						</button>
-						<h4 class="modal-title" id="locationModalTitle">Home Address</h4>
+	<div class="modal fade" id="locationModal" tabindex="-1" role="dialog" aria-labelledby="locationModalTitle" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="locationModalTitle">Home Address</h4>
+				</div>
+				<div class="modal-body">
+					<div ng-if="location_bookee">
+						<iframe width="100%" height="300px" frameborder="0" ng-src="{{getMapLocation()}}"></iframe>
 					</div>
-					<div class="modal-body">
-						<div ng-if="location_bookee">
-							<iframe width="100%" height="300px" frameborder="0" ng-src="{{getMapLocation()}}"></iframe>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">
+						<div id="name">{{bookee_info.name}}</div>
+					</h4>
+				</div>
+				<img id="picture" ng-src="/assets/{{bookee.picture}}">
+				<div class="modal-body">
+					<img id="modal-picture" ng-src="/assets/{{bookee_info.picture}}">
+
+					<hr id="line1">
+					<div id="address">Address: {{bookee_info.address}}, {{bookee_info.city_state}}</div>
+
+					<hr id="line2">
+					<div id="address">STATUS: <span id="status_color">{{bookee_info.status}}</span></div>
+					<div id="address">Officer: {{bookee_info.officer}}</div>
+					<div id="address">Arrest Date & Time: {{bookee_info.arrest_datetime | date:"medium"}}</div>
+					<hr id="line2">
+
+					<div ng-repeat = 'convict_offense_id in bookee.convict_offense_ids' ng-init="convict_offense = ConvictOffense.find(convict_offense_id)">
+
+						<div ng-init="crime = Crime.find(convict_offense.crime_id)">
+							<div id="offense">{{crime.name}}</div>
 						</div>
+
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 </div>

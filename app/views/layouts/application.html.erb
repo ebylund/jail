@@ -49,39 +49,17 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel"><div> ng-repeat = 'bookee in Bookee.all()</div></h4>
-      </div>
-      <div class="modal-body">
+<div id="backgroundFixed">
 
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
 </div>
 
-
-
-    <div id="map-canvas"/>
-
-
-
-
-  <div id="map-canvas"/>
-
-<div id="backgroundFixed"></div>
 <div class="container">
 
     <div class="row">
-      <div class="span12"><%= yield %></div>
+
+      <div class="span12">
+        <%= yield %>
+      </div>
 
     </div>
 </div>
