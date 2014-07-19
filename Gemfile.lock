@@ -29,7 +29,12 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     arel (5.0.1.20140414130214)
+    bootstrap-sass (3.2.0.0)
+      sass (~> 3.2)
     builder (3.2.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -78,6 +83,8 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
+    quiet_assets (1.0.3)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -132,8 +139,6 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (2.2.2)
-      coffee-rails
     twitter-bootstrap-rails (2.2.8)
       actionpack (>= 3.1)
       execjs
@@ -150,6 +155,8 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  annotate
+  bootstrap-sass
   coffee-rails (~> 4.0.0)
   geocoder
   inherited_resources
@@ -157,12 +164,12 @@ DEPENDENCIES
   less-rails (~> 2.5.0)
   nokogiri (~> 1.6.2.1)
   pry-rails
+  quiet_assets
   rails (= 4.1.2)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
   sqlite3
   therubyracer
-  turbolinks
   twitter-bootstrap-rails
   uglifier (>= 1.3.0)
